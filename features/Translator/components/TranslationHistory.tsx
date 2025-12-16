@@ -122,8 +122,7 @@ export default function TranslationHistory({
               borderBottomThickness={4}
               className={cn(
                 'px-4 py-2 text-sm w-auto',
-                'bg-red-500 border-red-700 text-[var(--background-color)]',
-                'hover:bg-red-600'
+                'bg-red-500 border-red-700 text-[var(--background-color)]'
               )}
             >
               <Trash2 className='h-4 w-4' />
@@ -149,7 +148,7 @@ export default function TranslationHistory({
               <AlertDialogCancel
                 className={cn(
                   'bg-[var(--card-color)] text-[var(--main-color)] border-[var(--border-color)]',
-                  'hover:bg-[var(--border-color)] cursor-pointer'
+                  'cursor-pointer'
                 )}
               >
                 Cancel
@@ -159,7 +158,7 @@ export default function TranslationHistory({
                   onClearAll();
                   setClearDialogOpen(false);
                 }}
-                className='bg-red-500 text-white hover:bg-red-600 cursor-pointer'
+                className='bg-red-500 text-[var(--background-color)] cursor-pointer'
               >
                 Clear All
               </AlertDialogAction>
@@ -226,7 +225,6 @@ export default function TranslationHistory({
                 '!w-9 !min-w-9 h-9 !p-0 flex-shrink-0',
                 'opacity-0 group-hover:opacity-100',
                 'bg-red-500 border-red-700 text-[var(--background-color)]',
-                'hover:bg-red-600',
                 'transition-opacity duration-200'
               )}
               onClick={e => {
