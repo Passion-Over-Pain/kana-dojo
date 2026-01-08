@@ -309,8 +309,8 @@ const LevelSetCards = <TLevel extends string, TItem>({
 
   if (!selectedCollection) {
     return (
-      <div className={clsx('flex flex-col w-full gap-4')}>
-        <div className='mx-4 px-4 py-3 rounded-xl bg-[var(--card-color)] border-2 border-[var(--border-color)]'>
+      <div className={clsx('flex w-full flex-col gap-4')}>
+        <div className='mx-4 rounded-xl border-2 border-[var(--border-color)] bg-[var(--card-color)] px-4 py-3'>
           <p className='text-sm text-[var(--secondary-color)]'>{loadingText}</p>
         </div>
       </div>
@@ -318,9 +318,9 @@ const LevelSetCards = <TLevel extends string, TItem>({
   }
 
   return (
-    <div className='flex flex-col w-full gap-4'>
+    <div className='flex w-full flex-col gap-4'>
       {!hasProgressData && (
-        <div className='mx-4 px-4 py-3 rounded-xl bg-[var(--card-color)] border-2 border-[var(--border-color)]'>
+        <div className='mx-4 rounded-xl border-2 border-[var(--border-color)] bg-[var(--card-color)] px-4 py-3'>
           <p className='text-sm text-[var(--secondary-color)]'>{tipText}</p>
         </div>
       )}
@@ -332,7 +332,7 @@ const LevelSetCards = <TLevel extends string, TItem>({
         }}
         className='px-2 py-3 opacity-90'
         borderRadius='3xl'
-        borderBottomThickness={10}
+        borderBottomThickness={14}
       >
         <MousePointer className={cn('fill-current')} />
         Quick Select
@@ -358,12 +358,12 @@ const LevelSetCards = <TLevel extends string, TItem>({
               setHideMastered(prev => !prev);
             }}
             className={clsx(
-              'flex items-center gap-2 px-4 py-2 rounded-xl',
-              'duration-250 transition-all ease-in-out',
+              'flex items-center gap-2 rounded-xl px-4 py-2',
+              'transition-all duration-250 ease-in-out',
               'border-2 border-[var(--border-color)]',
               'hover:bg-[var(--card-color)]',
               hideMastered &&
-                'bg-[var(--card-color)] border-[var(--main-color)]'
+                'border-[var(--main-color)] bg-[var(--card-color)]'
             )}
           >
             {hideMastered ? (
@@ -393,7 +393,7 @@ const LevelSetCards = <TLevel extends string, TItem>({
         return (
           <div
             key={`row-${rowIndex}`}
-            className={clsx('flex flex-col py-4 gap-4', cardBorderStyles)}
+            className={clsx('flex flex-col gap-4 py-4', cardBorderStyles)}
           >
             <h3
               onClick={() => {
@@ -405,13 +405,13 @@ const LevelSetCards = <TLevel extends string, TItem>({
                 );
               }}
               className={clsx(
-                'group text-3xl ml-4 flex flex-row items-center gap-2 rounded-xl hover:cursor-pointer',
+                'group ml-4 flex flex-row items-center gap-2 rounded-xl text-3xl hover:cursor-pointer',
                 collapsedRows.includes(rowIndex) && 'mb-1.5'
               )}
             >
               <ChevronUp
                 className={clsx(
-                  'duration-250 text-[var(--border-color)]',
+                  'text-[var(--border-color)] duration-250',
                   'max-md:group-active:text-[var(--secondary-color)]',
                   'md:group-hover:text-[var(--secondary-color)]',
                   collapsedRows.includes(rowIndex) && 'rotate-180'
@@ -428,8 +428,8 @@ const LevelSetCards = <TLevel extends string, TItem>({
             {!collapsedRows.includes(rowIndex) && (
               <div
                 className={clsx(
-                  'flex flex-col w-full',
-                  'md:items-start md:grid lg:grid-cols-2 2xl:grid-cols-3'
+                  'flex w-full flex-col',
+                  'md:grid md:items-start lg:grid-cols-2 2xl:grid-cols-3'
                 )}
               >
                 {rowSets.map((setTemp, i) => {
@@ -443,20 +443,20 @@ const LevelSetCards = <TLevel extends string, TItem>({
                     <div
                       key={setTemp.id + setTemp.name}
                       className={clsx(
-                        'flex flex-col md:px-4 h-full',
+                        'flex h-full flex-col md:px-4',
                         'border-[var(--border-color)]',
                         i < rowSets.length - 1 && 'md:border-r-1'
                       )}
                     >
                       <button
                         className={clsx(
-                          'text-2xl flex justify-center items-center gap-2 group',
-                          'rounded-3xl  hover:cursor-pointer',
-                          'duration-250 transition-all ease-in-out',
-                          'px-2 py-3 max-md:mx-4 border-b-10',
+                          'group flex items-center justify-center gap-2 text-2xl',
+                          'rounded-3xl hover:cursor-pointer',
+                          'transition-all duration-250 ease-in-out',
+                          'border-b-10 px-2 py-3 max-md:mx-4',
                           isSelected
-                            ? 'bg-[var(--secondary-color)] text-[var(--background-color)] border-[var(--secondary-color-accent)]'
-                            : 'bg-[var(--background-color)] border-[var(--border-color)] hover:border-[var(--main-color)]/70'
+                            ? 'border-[var(--secondary-color-accent)] bg-[var(--secondary-color)] text-[var(--background-color)]'
+                            : 'border-[var(--border-color)] bg-[var(--background-color)] hover:border-[var(--main-color)]/70'
                         )}
                         onClick={e => {
                           e.currentTarget.blur();
@@ -474,7 +474,7 @@ const LevelSetCards = <TLevel extends string, TItem>({
                         }}
                       >
                         {isSelected ? (
-                          <CircleCheck className='mt-0.5 text-[var(--background-color)] duration-250' />
+                          <CircleCheck className='mt-0.5 fill-current text-[var(--background-color)] duration-250' />
                         ) : (
                           <Circle className='mt-0.5 text-[var(--border-color)] duration-250' />
                         )}

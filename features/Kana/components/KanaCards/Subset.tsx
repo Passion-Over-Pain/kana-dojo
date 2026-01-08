@@ -129,7 +129,7 @@ const Subset = ({ sliceRange, subgroup }: SubsetProps) => {
             selectAllInSubset();
           }}
           borderRadius='3xl'
-          borderBottomThickness={10}
+          borderBottomThickness={12}
         >
           <MousePointer size={22} className={cn('fill-current')} />
           <span>select all {subgroup.slice(1).toLowerCase()}</span>
