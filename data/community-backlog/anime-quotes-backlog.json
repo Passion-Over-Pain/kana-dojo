@@ -51,7 +51,8 @@
     "english": "Good grief.",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Jotaro Kujo",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 7,
@@ -60,7 +61,7 @@
     "english": "Useless! Useless! Useless!",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "DIO",
-    "issued": false
+    "issued": true
   },
   {
     "id": 8,
